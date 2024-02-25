@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.app {
+  transition: opacity 500ms;
+}
+
+.draggable {
+  transition: transform 500ms;
+}
+
+.dragging {
+  transform: scale(0.8);
+}
+
+.incoming {
+  transform: scale(1.2);
+}
+
+.ping {
+  transform: rotate(24deg);
+}
+
+@keyframes appear {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.item {
+  padding: 1rem;
+  transition: all 300ms;
+  animation-name: appear;
+  animation-duration: 500ms;
+}
