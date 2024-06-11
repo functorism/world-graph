@@ -17,11 +17,14 @@ concept of Infinite Craft with different models and prompting strategies.
 
 ## Getting Started
 
-``` shell
+```shell
 git clone https://github.com/functorism/world-graph
 cd world-graph
 # optionally nix-shell
-sqlite3 db.sqlite < migrations/1_init_triples.sql
+sqlite3 db.sqlite < migrations/1_init_triple.sql
+# optionally run ollama in a Docker container
 docker-compose up -d
-cargo run
+DATABASE_URL=sqlite:db.sqlite cargo run
 ```
+
+If you are running Ollama yourself, make sure to `ollama pull neural-chat` first.
